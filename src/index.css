@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 20% 14%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 14% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 14% 22%;
+    --input: 220 14% 22%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* IPL Team Colors */
+    --team-csk: 45 100% 50%;
+    --team-mi: 212 100% 32%;
+    --team-rcb: 358 86% 52%;
+    --team-kkr: 270 44% 25%;
+    --team-srh: 24 100% 58%;
+    --team-dc: 204 100% 37%;
+    --team-rr: 324 83% 51%;
+    --team-pbks: 357 76% 47%;
+    --team-gt: 200 50% 25%;
+    --team-lsg: 340 67% 40%;
+
+    /* Gradients */
+    --gradient-dark: linear-gradient(135deg, hsl(220 20% 8%) 0%, hsl(220 25% 15%) 100%);
+    --gradient-shine: linear-gradient(135deg, hsl(0 0% 100% / 0.1) 0%, hsl(0 0% 100% / 0) 100%);
+    
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 14% 22%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(45 100% 50%) 0%, hsl(45 100% 70%) 100%);
+  }
+
+  .team-gradient-csk {
+    background: linear-gradient(135deg, hsl(45 100% 50%) 0%, hsl(45 100% 40%) 100%);
+  }
+  
+  .team-gradient-mi {
+    background: linear-gradient(135deg, hsl(212 100% 40%) 0%, hsl(212 100% 25%) 100%);
+  }
+  
+  .team-gradient-rcb {
+    background: linear-gradient(135deg, hsl(358 86% 52%) 0%, hsl(358 86% 35%) 100%);
+  }
+  
+  .team-gradient-kkr {
+    background: linear-gradient(135deg, hsl(270 44% 35%) 0%, hsl(270 44% 20%) 100%);
+  }
+  
+  .team-gradient-srh {
+    background: linear-gradient(135deg, hsl(24 100% 58%) 0%, hsl(24 100% 40%) 100%);
+  }
+  
+  .team-gradient-dc {
+    background: linear-gradient(135deg, hsl(204 100% 45%) 0%, hsl(358 86% 45%) 100%);
+  }
+  
+  .team-gradient-rr {
+    background: linear-gradient(135deg, hsl(324 83% 51%) 0%, hsl(324 83% 35%) 100%);
+  }
+  
+  .team-gradient-pbks {
+    background: linear-gradient(135deg, hsl(357 76% 47%) 0%, hsl(357 76% 30%) 100%);
+  }
+  
+  .team-gradient-gt {
+    background: linear-gradient(135deg, hsl(200 50% 35%) 0%, hsl(200 50% 20%) 100%);
+  }
+  
+  .team-gradient-lsg {
+    background: linear-gradient(135deg, hsl(340 67% 50%) 0%, hsl(190 70% 40%) 100%);
+  }
+
+  .animate-wave {
+    animation: wave 8s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(-10px) translateY(5px); }
+  50% { transform: translateX(0) translateY(-5px); }
+  75% { transform: translateX(10px) translateY(5px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(220 20% 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(220 14% 30%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(220 14% 40%);
+}
